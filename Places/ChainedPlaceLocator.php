@@ -7,13 +7,13 @@ namespace MSB\LocatorBundle\Places;
  */
 class ChainedPlaceLocator implements PlaceLocatorInterface
 {
-	private $locators = [];
+    private $locators = [];
 
-	/**
-	 * Registers a new implementation of PlaceLocatorInterface
-	 *
-	 * @param PlaceLocatorInterface $locator
-	 */
+    /**
+     * Registers a new implementation of PlaceLocatorInterface
+     *
+     * @param PlaceLocatorInterface $locator
+     */
     public function addLocator(PlaceLocatorInterface $locator)
     {
         $this->locators[] = $locator;
@@ -21,14 +21,14 @@ class ChainedPlaceLocator implements PlaceLocatorInterface
 
     public function searchByKeyword($query)
     {
-		$results = [];
-		
-		// for each implementations...
-		foreach($this->locators as $locator) {
-			// ...merge its results
-			$results = array_merge($results, $locator->searchByKeyword($query));
-		}
-		
-		return $results;		
+        $results = [];
+
+        // for each implementations...
+        foreach ($this->locators as $locator) {
+            // ...merge its results
+            $results = array_merge($results, $locator->searchByKeyword($query));
+        }
+
+        return $results;
     }
 }

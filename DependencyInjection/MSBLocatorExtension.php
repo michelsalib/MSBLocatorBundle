@@ -13,8 +13,8 @@ class MSBLocatorExtension extends Extension
     {
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
-		
-		$container->setAlias('place_locator', 'msb.places.chained_locator');
+
+        $container->setAlias('place_locator', 'msb.places.chained_locator');
     }
 
     public function getAlias()

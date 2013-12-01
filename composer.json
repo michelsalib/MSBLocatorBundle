@@ -1,0 +1,25 @@
+{
+    "name": "msb/locator-bundle",
+    "type": "symfony-bundle",
+    "description": "MSBLocatorBundle",
+    "keywords": ["locator"],
+    "homepage": "http://github.com/michelsalib/MSBLocatorBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michel Salib",
+            "email": "michelsalib@hotmail.com",
+            "homepage": "http://michelsalib.com"
+        }
+    ],
+    "require": {
+        "symfony/framework-bundle": "2.3~"
+    },
+	"suggest": {
+		"symfony/console": "For using the console commands"
+	}
+    "autoload": {
+        "psr-0": { "MSB\\LocatorBundle": "" }
+    },
+    "target-dir": "MSB/LocatorBundle"
+}

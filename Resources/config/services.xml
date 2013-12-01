@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="msb.places.chained_locator" class="MSB\LocatorBundle\Places\ChainedPlaceLocator">
+        </service>
+		
+        <service id="msb.places.google_locator" class="MSB\LocatorBundle\Places\GooglePlaceLocator">
+			<argument>AIzaSyBnFm8QaqpdfQleCoJ5V8JFCDKp0gfpm8E</argument>
+			<tag name="place_locator" />
+        </service>
+		
+        <service id="msb.places.here_locator" class="MSB\LocatorBundle\Places\HerePlaceLocator">
+			<argument>DemoAppId01082013GAL</argument>
+			<argument>AJKnXv84fjrb0KIHawS0Tg</argument>
+			<tag name="place_locator" />
+        </service>
+    </services>
+</container>

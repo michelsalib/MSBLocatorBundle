@@ -16,7 +16,7 @@ class PlaceLocatorPass implements CompilerPassInterface
 
         $definition = $container->findDefinition('place_locator');
 
-        foreach ($container->findTaggedServiceIds('place_locator') as $id => $attributes) {
+        foreach ($container->findTaggedServiceIds('place_locator') as $id => $tags) {
             $definition->addMethodCall('addLocator', [new Reference($id)]);
         }
     }
